@@ -13,6 +13,14 @@ public class JogoMesa extends  Jogo{
 
     @Override
     public double calculaValorAluguel(){
-        return 0;
+        double valor = this.getValorBase();
+        switch (tipoMesa){
+            case TipoMesa.TABULEIRO:
+                valor = valor * numeroPecas;
+                break;
+            case TipoMesa.CARTAS:
+                valor += valor * 0.20;
+        }
+        return valor;
     }
 }

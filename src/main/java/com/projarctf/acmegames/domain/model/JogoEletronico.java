@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 public class JogoEletronico extends Jogo {
 
     private TipoEletronico tipoEletronico;
@@ -13,6 +13,17 @@ public class JogoEletronico extends Jogo {
 
     @Override
     public double calculaValorAluguel(){
-        return 0;
+        double valor = this.getValorBase();
+        switch (tipoEletronico){
+            case TipoEletronico.AVENTURA:
+                valor += valor * 0.05;
+                break;
+            case TipoEletronico.ESTRATEGIA:
+                valor += valor * 0.15;
+                break;
+            case TipoEletronico.SIMULACAO:
+                valor += valor * 0.25;
+        }
+        return valor;
     }
 }
