@@ -11,4 +11,5 @@ public class EmpresarialEntity extends ClienteEntity {
     private String nomeFantasia;
     private String cnpj;
 
+    protected EmpresarialEntity() {}
 }

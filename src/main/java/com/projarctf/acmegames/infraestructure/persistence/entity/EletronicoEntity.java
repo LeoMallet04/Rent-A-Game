@@ -12,4 +12,6 @@ import lombok.Setter;
 public class EletronicoEntity extends JogoEntity {
     private TipoEletronico tipo;
     private String plataforma;
+
+    protected EletronicoEntity() {}
 }

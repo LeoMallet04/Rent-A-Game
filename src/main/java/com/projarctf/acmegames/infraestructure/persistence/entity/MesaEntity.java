@@ -12,4 +12,6 @@ import lombok.Setter;
 public class MesaEntity extends JogoEntity {
     private TipoMesa tipo;
     private int numeroPecas;
+
+    protected MesaEntity(){}
 }

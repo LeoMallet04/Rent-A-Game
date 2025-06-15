@@ -9,4 +9,6 @@ import lombok.Setter;
 @Entity
 public class IndividualEntity extends ClienteEntity{
     private String cpf;
+
+    protected IndividualEntity(){}
 }
