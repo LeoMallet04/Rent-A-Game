@@ -1,4 +1,4 @@
-package com.projarctf.acmegames.domain.model;
+package com.projarctf.acmegames.domain.model.jogo;
 
 import com.projarctf.acmegames.domain.enums.TipoEletronico;
 import lombok.Data;
