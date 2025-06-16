@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@PrimaryKeyJoinColumn(name="numero")
+//@PrimaryKeyJoinColumn(name="numero")
 public class IndividualEntity extends ClienteEntity{
     private String cpf;
 

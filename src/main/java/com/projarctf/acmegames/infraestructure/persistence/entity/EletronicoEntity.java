@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@PrimaryKeyJoinColumn(name="numero")
+//@PrimaryKeyJoinColumn(name="numero")
 public class EletronicoEntity extends JogoEntity {
     private TipoEletronico tipo;
     private String plataforma;
