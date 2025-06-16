@@ -1,11 +1,16 @@
 package com.projarctf.acmegames.infraestructure.persistence.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class ClienteEntity {
@@ -17,7 +22,7 @@ public class ClienteEntity {
     private String endereco;
 
     @OneToMany
-    private List<AluguelEntity> alugueis;
+    private List<AluguelEntity> alugueis = new ArrayList<>();
 
     protected ClienteEntity() {}
 }

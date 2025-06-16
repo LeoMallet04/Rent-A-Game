@@ -1,11 +1,16 @@
 package com.projarctf.acmegames.infraestructure.persistence.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class JogoEntity {
@@ -17,7 +22,7 @@ public class JogoEntity {
     private double valorBase;
 
     @OneToMany
-    private List<AluguelEntity> alugueis;
+    private List<AluguelEntity> alugueis = new ArrayList<>();
 
     protected JogoEntity() {}
 }
