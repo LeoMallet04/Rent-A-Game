@@ -1,10 +1,11 @@
 package com.projarctf.acmegames.domain.model.jogo;
 
 import com.projarctf.acmegames.domain.enums.TipoMesa;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class JogoMesa extends  Jogo{
 

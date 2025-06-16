@@ -1,9 +1,10 @@
 package com.projarctf.acmegames.domain.model.cliente;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class Empresarial extends Cliente {
     private String nomeFantasia;

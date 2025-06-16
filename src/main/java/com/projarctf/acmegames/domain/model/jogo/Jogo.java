@@ -1,8 +1,11 @@
 package com.projarctf.acmegames.domain.model.jogo;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public abstract class Jogo {
     private int codigo;
     private String nome;

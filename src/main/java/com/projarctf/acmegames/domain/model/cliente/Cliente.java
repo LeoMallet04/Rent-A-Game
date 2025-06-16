@@ -1,8 +1,11 @@
 package com.projarctf.acmegames.domain.model.cliente;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cliente {
     private int numero;
     private String nome;

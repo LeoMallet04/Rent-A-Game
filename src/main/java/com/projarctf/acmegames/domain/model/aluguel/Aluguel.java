@@ -5,11 +5,15 @@ import com.projarctf.acmegames.domain.model.cliente.Empresarial;
 import com.projarctf.acmegames.domain.model.cliente.Individual;
 import com.projarctf.acmegames.domain.model.jogo.Jogo;
 import com.projarctf.acmegames.domain.model.jogo.JogoEletronico;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 public class Aluguel {
     private int identificador;
     private Date dataInicial;
