@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@PrimaryKeyJoinColumn(name="codigo")
+@PrimaryKeyJoinColumn(name="numero")
 public class EmpresarialEntity extends ClienteEntity {
     private String nomeFantasia;
     private String cnpj;
