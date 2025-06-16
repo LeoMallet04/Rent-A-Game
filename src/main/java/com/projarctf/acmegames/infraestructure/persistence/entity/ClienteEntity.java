@@ -17,13 +17,14 @@ public class ClienteEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "numero")
     private int numero;
 
     private String nome;
 
     private String endereco;
 
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "cliente")
     private List<AluguelEntity> alugueis = new ArrayList<>();
 
     protected ClienteEntity() {}

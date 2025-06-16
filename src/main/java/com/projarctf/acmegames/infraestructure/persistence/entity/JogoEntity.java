@@ -17,11 +17,12 @@ public class JogoEntity {
 
     @Id
     @GeneratedValue
+    @Column(name = "codigo")
     private int codigo;
     private String nome;
     private double valorBase;
 
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "jogo")
     private List<AluguelEntity> alugueis = new ArrayList<>();
 
     protected JogoEntity() {}
