@@ -16,12 +16,14 @@ import java.util.List;
 public class ClienteEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int numero;
+
     private String nome;
+
     private String endereco;
 
-    @OneToMany
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AluguelEntity> alugueis = new ArrayList<>();
 
     protected ClienteEntity() {}

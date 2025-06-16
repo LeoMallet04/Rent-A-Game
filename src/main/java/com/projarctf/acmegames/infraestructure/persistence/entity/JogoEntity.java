@@ -21,7 +21,7 @@ public class JogoEntity {
     private String nome;
     private double valorBase;
 
-    @OneToMany
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AluguelEntity> alugueis = new ArrayList<>();
 
     protected JogoEntity() {}
