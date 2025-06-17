@@ -26,7 +26,7 @@ public class JogoEntity {
     private String plataforma;
 
     @Column(nullable = true)
-    private int numeroPecas;
+    private Integer numeroPecas;
 
     @OneToMany(mappedBy = "jogo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AluguelEntity> alugueis = new ArrayList<>();

@@ -12,12 +12,8 @@ import com.projarctf.acmegames.infraestructure.persistence.entity.JogoEntity;
 
 @Repository
 public class JogoRepoJpaImpl implements IJogoRepository {
-    private IJogoJpaItfRep repository;
-
     @Autowired
-    public JogoRepoJpaImpl(IJogoJpaItfRep repository) {
-        this.repository = repository;
-    }
+    private IJogoJpaItfRep repository;
 
     @Override
     public List<JogoEntity> getJogos() {

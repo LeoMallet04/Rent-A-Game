@@ -1,5 +1,7 @@
 package com.projarctf.acmegames.infraestructure.persistence.repository.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.projarctf.acmegames.domain.enums.TipoEletronico;
 import com.projarctf.acmegames.domain.enums.TipoMesa;
 import com.projarctf.acmegames.domain.model.jogo.Jogo;
@@ -7,6 +9,10 @@ import com.projarctf.acmegames.domain.model.jogo.JogoEletronico;
 import com.projarctf.acmegames.domain.model.jogo.JogoMesa;
 import com.projarctf.acmegames.infraestructure.persistence.entity.JogoEntity;
 
+import lombok.NoArgsConstructor;
+
+@Component
+@NoArgsConstructor
 public class JogoMapper {
     public Jogo toDomain(JogoEntity jogoEntity) {
         if (jogoEntity.getPlataforma() != null) { // eletronico
