@@ -12,7 +12,6 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "cliente")
 public class ClienteEntity {
 
@@ -21,8 +20,16 @@ public class ClienteEntity {
     private Long numero;
 
     private String nome;
-
     private String endereco;
+
+    @Column(nullable = true)
+    private String nomeFantasia;
+
+    @Column(nullable = true)
+    private String cnpj; //tem q validar, se tem CNPJ, não pode ter CPF
+
+    @Column(nullable = true)
+    private String cpf;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AluguelEntity> alugueis = new ArrayList<>();
