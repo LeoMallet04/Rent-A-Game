@@ -7,7 +7,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class JogoMesa extends  Jogo{
+public class JogoMesa extends Jogo{
 
     private TipoMesa tipoMesa;
     private int numeroPecas;
