@@ -1,9 +1,9 @@
 package com.projarctf.acmegames.application.usecases;
 
+import com.projarctf.acmegames.application.assembler.ClienteMapper;
 import com.projarctf.acmegames.application.dto.ClienteDTO;
 import com.projarctf.acmegames.domain.model.cliente.Cliente;
 import com.projarctf.acmegames.domain.repository.IClienteRepository;
-import com.projarctf.acmegames.infrastructure.persistence.repository.mapper.ClienteMapper;
 
 import org.springframework.stereotype.Service;
 
