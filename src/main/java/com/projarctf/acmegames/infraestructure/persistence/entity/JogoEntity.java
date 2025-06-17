@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "jogo")
 public class JogoEntity {
 
     @Id

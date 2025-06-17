@@ -10,6 +10,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @PrimaryKeyJoinColumn(name="codigo")
+@Table(name = "jogo_mesa")
 public class MesaEntity extends JogoEntity {
     
     @Enumerated(EnumType.STRING)

@@ -10,6 +10,7 @@ import java.sql.Date;
 @Setter
 @AllArgsConstructor
 @Entity
+@Table(name = "aluguel")
 public class AluguelEntity {
 
     @Id
@@ -18,10 +19,10 @@ public class AluguelEntity {
     private int periodo;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_numero", nullable = false)
+    @JoinColumn(name = "numero_cliente", nullable = false)
     private ClienteEntity cliente;
     @ManyToOne
-    @JoinColumn(name = "jogo_codigo", nullable = false)
+    @JoinColumn(name = "codigo_jogo", nullable = false)
     private JogoEntity jogo;
 
     protected AluguelEntity(){}
