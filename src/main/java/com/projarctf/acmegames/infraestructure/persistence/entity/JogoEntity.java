@@ -20,8 +20,6 @@ public class JogoEntity {
     private int codigo;
     private String nome;
     private double valorBase;
-
-    @Column(nullable = true)
     private String tipo; //isso aq vai ter q ser traduzido e validado pro enum certo
 
     @Column(nullable = true)
