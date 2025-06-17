@@ -16,13 +16,12 @@ import java.util.List;
 public class JogoEntity {
 
     @Id
-    @GeneratedValue
     @Column(name = "codigo")
     private int codigo;
     private String nome;
     private double valorBase;
 
-    @OneToMany(mappedBy = "jogo")
+    @OneToMany(mappedBy = "jogo",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AluguelEntity> alugueis = new ArrayList<>();
 
     protected JogoEntity() {}

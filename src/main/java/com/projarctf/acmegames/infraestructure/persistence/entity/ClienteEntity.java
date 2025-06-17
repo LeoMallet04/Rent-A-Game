@@ -16,7 +16,6 @@ import java.util.List;
 public class ClienteEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "numero")
     private Long numero;
 
@@ -24,7 +23,7 @@ public class ClienteEntity {
 
     private String endereco;
 
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AluguelEntity> alugueis = new ArrayList<>();
 
     protected ClienteEntity() {}

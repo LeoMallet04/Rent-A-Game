@@ -11,6 +11,8 @@ import lombok.Setter;
 @Entity
 @PrimaryKeyJoinColumn(name="codigo")
 public class MesaEntity extends JogoEntity {
+    
+    @Enumerated(EnumType.STRING)
     private TipoMesa tipo;
     private int numeroPecas;
 

@@ -11,6 +11,7 @@ import lombok.Setter;
 @Entity
 @PrimaryKeyJoinColumn(name="numero")
 public class EletronicoEntity extends JogoEntity {
+    @Enumerated(EnumType.STRING)
     private TipoEletronico tipo;
     private String plataforma;
 

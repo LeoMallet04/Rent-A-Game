@@ -13,7 +13,6 @@ import java.sql.Date;
 public class AluguelEntity {
 
     @Id
-    @GeneratedValue
     private int identificador;
     private Date dataInicial;
     private int periodo;
