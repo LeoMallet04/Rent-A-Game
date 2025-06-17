@@ -6,10 +6,10 @@ import com.projarctf.acmegames.domain.service.JogoService;
 import com.projarctf.acmegames.infraestructure.persistence.entity.JogoEntity;
 
 public class ListaJogoUsecase {
-    public List<JogoEntity> listarJogos() {
+    public List<Jogo> listarJogos() {
         JogoService jogoService = new JogoService();
         
-        List<JogoEntity> jogos = jogoService.getJogos();
+        List<Jogo> jogos = jogoService.getJogos();
 
         return jogos;
     }
