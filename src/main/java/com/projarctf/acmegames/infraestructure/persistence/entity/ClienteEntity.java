@@ -18,7 +18,7 @@ public class ClienteEntity {
 
     @Id
     @Column(name = "numero")
-    private Long numero;
+    private int numero;
 
     private String nome;
 
