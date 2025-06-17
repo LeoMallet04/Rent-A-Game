@@ -27,4 +27,10 @@ public class JogoEletronico extends Jogo {
         }
         return valor;
     }
+
+    public JogoEletronico(int codigo, String nome, double valorBase, TipoEletronico tipoEletronico, String plataforma) {
+        super(codigo, nome, valorBase);
+        this.tipoEletronico = tipoEletronico;
+        this.plataforma = plataforma;
+    }
 }

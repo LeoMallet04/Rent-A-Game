@@ -1,5 +1,6 @@
 package com.projarctf.acmegames.domain.model.jogo;
 
+import com.projarctf.acmegames.domain.enums.TipoEletronico;
 import com.projarctf.acmegames.domain.enums.TipoMesa;
 import lombok.*;
 
@@ -23,5 +24,11 @@ public class JogoMesa extends Jogo{
                 valor += valor * 0.20;
         }
         return valor;
+    }
+
+    public JogoMesa(int codigo, String nome, double valorBase, TipoMesa tipoMesa, int numeroPecas) {
+        super(codigo, nome, valorBase);
+        this.tipoMesa = tipoMesa;
+        this.numeroPecas = numeroPecas;
     }
 }
