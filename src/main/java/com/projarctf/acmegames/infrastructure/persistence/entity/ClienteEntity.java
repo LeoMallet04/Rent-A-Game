@@ -1,4 +1,4 @@
-package com.projarctf.acmegames.infraestructure.persistence.entity;
+package com.projarctf.acmegames.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,7 +26,7 @@ public class ClienteEntity {
     private String nomeFantasia;
 
     @Column(nullable = true)
-    private String cnpj; //tem q validar, se tem CNPJ, não pode ter CPF
+    private String cnpj; 
 
     @Column(nullable = true)
     private String cpf;

@@ -1,4 +1,4 @@
-package com.projarctf.acmegames.infraestructure.persistence.entity;
+package com.projarctf.acmegames.infrastructure.persistence.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
