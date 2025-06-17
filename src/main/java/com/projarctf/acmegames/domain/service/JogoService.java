@@ -19,7 +19,6 @@ public class JogoService {
     JogoMapper jogoMapper;
 
     public List<Jogo> listJogos() {
-        
         List<JogoEntity> jogoEntities = jogoRepository.getJogos();
 
         List<Jogo> jogos = jogoEntities.stream()
