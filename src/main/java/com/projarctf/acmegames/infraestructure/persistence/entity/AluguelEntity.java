@@ -14,7 +14,7 @@ import java.sql.Date;
 public class AluguelEntity {
 
     @Id
-    private int identificador;
+    private Integer identificador;
     private Date dataInicial;
     private int periodo;
 

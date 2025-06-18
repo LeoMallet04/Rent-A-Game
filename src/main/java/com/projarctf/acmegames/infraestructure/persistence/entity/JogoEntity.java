@@ -12,17 +12,25 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "jogo")
 public class JogoEntity {
 
     @Id
     @Column(name = "codigo")
-    private int codigo;
+    private Integer codigo;
     private String nome;
     private double valorBase;
 
-    @OneToMany(mappedBy = "jogo",cascade = CascadeType.ALL, orphanRemoval = true)
+    @Column(nullable = true)
+    private String tipo; //isso aq vai ter q ser traduzido e validado pro enum certo
+
+    @Column(nullable = true)
+    private String plataforma;
+
+    @Column(nullable = true)
+    private Integer numeroPecas;
+
+    @OneToMany(mappedBy = "jogo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AluguelEntity> alugueis = new ArrayList<>();
 
     protected JogoEntity() {}
