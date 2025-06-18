@@ -12,6 +12,12 @@ public class JogoEletronico extends Jogo {
     private TipoEletronico tipoEletronico;
     private String plataforma;
 
+    public JogoEletronico(int codigo, String nome, double valorBase, TipoEletronico tipoEletronico, String plataforma) {
+        super(codigo, nome, valorBase);
+        this.tipoEletronico = tipoEletronico;
+        this.plataforma = plataforma;
+    }
+
     @Override
     public double calculaValorAluguel(){
         double valor = this.getValorBase();

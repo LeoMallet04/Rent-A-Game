@@ -12,6 +12,12 @@ public class JogoMesa extends  Jogo{
     private TipoMesa tipoMesa;
     private int numeroPecas;
 
+    public JogoMesa(int codigo, String nome, double valorBase, TipoMesa tipoMesa, int numeroPecas) {
+        super(codigo, nome, valorBase);
+        this.tipoMesa = tipoMesa;
+        this.numeroPecas = numeroPecas;
+    }
+
     @Override
     public double calculaValorAluguel(){
         double valor = this.getValorBase();
