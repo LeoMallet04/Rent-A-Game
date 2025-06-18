@@ -18,7 +18,7 @@ public class JogoController {
     private ListaJogoUsecase listaJogoUsecase;
 
     @GetMapping("/listajogos")
-    public List<Jogo> listaJogos() {
+    public List<Object> listaJogos() {
         return listaJogoUsecase.listarJogos();
     }
 }
