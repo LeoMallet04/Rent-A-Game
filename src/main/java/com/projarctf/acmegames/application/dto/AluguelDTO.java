@@ -2,15 +2,22 @@ package com.projarctf.acmegames.application.dto;
 
 import com.projarctf.acmegames.domain.model.cliente.Cliente;
 import com.projarctf.acmegames.domain.model.jogo.Jogo;
-import lombok.Builder;
+import lombok.*;
 
 import java.util.Date;
 
-@Builder
-public record AluguelDTO(
-        int indentificador,
-        Date dataInicial,
-        int periodo,
-        Cliente cliente,
-        Jogo jogo
-) {}
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class AluguelDTO{
+    private int identificador;
+    private Date dataInicial;
+    private int periodo;
+
+    private Cliente cliente;
+    private Jogo jogo;
+
+    private double valorFinal;
+
+}
