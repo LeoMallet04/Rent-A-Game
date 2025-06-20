@@ -15,3 +15,4 @@ public class JogoEletronicoDTO {
     private TipoEletronico tipo;
     private String plataforma;
 }
+
