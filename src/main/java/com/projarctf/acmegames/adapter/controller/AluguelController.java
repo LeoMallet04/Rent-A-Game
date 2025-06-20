@@ -17,7 +17,7 @@ public class AluguelController {
     @Autowired
     private ListarAlugueisUseCase listarAlugueisUseCase;
 
-    @GetMapping("/acmegames/cadastro/listaalugueis")
+    @GetMapping("/listaalugueis")
     public List<AluguelDTO> getAlugueis(){
         return listarAlugueisUseCase.execute();
     }
