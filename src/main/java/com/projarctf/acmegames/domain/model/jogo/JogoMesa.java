@@ -30,10 +30,4 @@ public class JogoMesa extends Jogo{
         }
         return valor;
     }
-
-    public JogoMesa(int codigo, String nome, double valorBase, TipoMesa tipoMesa, int numeroPecas) {
-        super(codigo, nome, valorBase);
-        this.tipoMesa = tipoMesa;
-        this.numeroPecas = numeroPecas;
-    }
 }
