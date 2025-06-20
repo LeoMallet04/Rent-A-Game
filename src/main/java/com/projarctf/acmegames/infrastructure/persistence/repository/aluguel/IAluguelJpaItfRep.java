@@ -1,6 +1,6 @@
-package com.projarctf.acmegames.infraestructure.persistence.repository.aluguel;
+package com.projarctf.acmegames.infrastructure.persistence.repository.aluguel;
 
-import com.projarctf.acmegames.infraestructure.persistence.entity.AluguelEntity;
+import com.projarctf.acmegames.infrastructure.persistence.entity.AluguelEntity;
 
 import java.util.List;
 

@@ -1,15 +1,15 @@
 package com.projarctf.acmegames.application.assembler;
 
-import org.springframework.stereotype.Component;
-
 import com.projarctf.acmegames.application.dto.ClienteDTO;
 import com.projarctf.acmegames.domain.model.cliente.Cliente;
 import com.projarctf.acmegames.domain.model.cliente.Individual;
 import com.projarctf.acmegames.infrastructure.persistence.entity.ClienteEntity;
 import com.projarctf.acmegames.domain.model.cliente.Empresarial;
 
-@Component
-public final class ClienteAssembler {
+public final class ClienteMapper {
+
+    private ClienteMapper() {
+    }
 
     public static ClienteDTO toDto(Cliente cliente) {
         if (cliente instanceof Individual ind) {
@@ -20,8 +20,7 @@ public final class ClienteAssembler {
                     "INDIVIDUAL",
                     ind.getCpf(),
                     null,
-                    null
-            );
+                    null);
         } else if (cliente instanceof Empresarial emp) {
             return new ClienteDTO(
                     emp.getNumero(),
@@ -30,8 +29,7 @@ public final class ClienteAssembler {
                     "EMPRESARIAL",
                     null,
                     emp.getNomeFantasia(),
-                    emp.getCnpj()
-            );
+                    emp.getCnpj());
         } else {
             return new ClienteDTO(
                     cliente.getNumero(),
@@ -40,9 +38,24 @@ public final class ClienteAssembler {
                     "DESCONHECIDO",
                     null,
                     null,
-                    null
-            );
+                    null);
         }
     }
 
+    public static Cliente toModel(ClienteEntity clienteEntity) {
+        if (clienteEntity.getCpf() != null && !clienteEntity.getCpf().isBlank()) {
+            return new Individual(
+                    clienteEntity.getNumero().intValue(),
+                    clienteEntity.getNome(),
+                    clienteEntity.getEndereco(),
+                    clienteEntity.getCpf());
+        } else {
+            return new Empresarial(
+                    clienteEntity.getNumero().intValue(),
+                    clienteEntity.getNome(),
+                    clienteEntity.getEndereco(),
+                    clienteEntity.getNomeFantasia(),
+                    clienteEntity.getCnpj());
+        }
+    }
 }

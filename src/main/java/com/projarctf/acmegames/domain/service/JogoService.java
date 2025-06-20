@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.projarctf.acmegames.domain.model.jogo.Jogo;
-import com.projarctf.acmegames.infraestructure.persistence.entity.JogoEntity;
-import com.projarctf.acmegames.infraestructure.persistence.repository.JogoRepoJpaImpl;
-import com.projarctf.acmegames.infraestructure.persistence.repository.mapper.JogoMapper;
+import com.projarctf.acmegames.infrastructure.persistence.entity.JogoEntity;
+import com.projarctf.acmegames.infrastructure.mapper.JogoMapper;
+import com.projarctf.acmegames.infrastructure.persistence.repository.JogoRepoJpaImpl;
 
 @Service
 public class JogoService {

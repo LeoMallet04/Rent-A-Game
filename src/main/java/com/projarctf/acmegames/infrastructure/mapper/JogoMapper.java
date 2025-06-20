@@ -1,11 +1,11 @@
-package com.projarctf.acmegames.infraestructure.persistence.repository.mapper;
+package com.projarctf.acmegames.infrastructure.mapper;
 
 import com.projarctf.acmegames.domain.enums.TipoEletronico;
 import com.projarctf.acmegames.domain.enums.TipoMesa;
 import com.projarctf.acmegames.domain.model.jogo.Jogo;
 import com.projarctf.acmegames.domain.model.jogo.JogoEletronico;
 import com.projarctf.acmegames.domain.model.jogo.JogoMesa;
-import com.projarctf.acmegames.infraestructure.persistence.entity.JogoEntity;
+import com.projarctf.acmegames.infrastructure.persistence.entity.JogoEntity;
 
 
 public class JogoMapper {

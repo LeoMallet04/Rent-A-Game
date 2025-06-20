@@ -1,11 +1,11 @@
-package com.projarctf.acmegames.infraestructure.persistence.repository.mapper;
+package com.projarctf.acmegames.infrastructure.mapper;
 
 import org.springframework.stereotype.Component;
 
 import com.projarctf.acmegames.domain.model.cliente.Cliente;
 import com.projarctf.acmegames.domain.model.cliente.Empresarial;
 import com.projarctf.acmegames.domain.model.cliente.Individual;
-import com.projarctf.acmegames.infraestructure.persistence.entity.ClienteEntity;
+import com.projarctf.acmegames.infrastructure.persistence.entity.ClienteEntity;
 
 import lombok.NoArgsConstructor;
 

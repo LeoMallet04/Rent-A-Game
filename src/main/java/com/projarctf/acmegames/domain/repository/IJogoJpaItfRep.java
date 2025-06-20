@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.projarctf.acmegames.infraestructure.persistence.entity.JogoEntity;
+import com.projarctf.acmegames.infrastructure.persistence.entity.JogoEntity;
 
 @Repository
 public interface IJogoJpaItfRep extends CrudRepository<JogoEntity, Integer> {

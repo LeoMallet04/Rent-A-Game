@@ -1,4 +1,4 @@
-package com.projarctf.acmegames.infraestructure.persistence.repository;
+package com.projarctf.acmegames.infrastructure.persistence.repository;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.projarctf.acmegames.domain.repository.IJogoJpaItfRep;
 import com.projarctf.acmegames.domain.repository.IJogoRepository;
-import com.projarctf.acmegames.infraestructure.persistence.entity.JogoEntity;
+import com.projarctf.acmegames.infrastructure.persistence.entity.JogoEntity;
 
 @Repository
 public class JogoRepoJpaImpl implements IJogoRepository {

@@ -1,10 +1,10 @@
-package com.projarctf.acmegames.infraestructure.persistence.repository.mapper;
+package com.projarctf.acmegames.infrastructure.mapper;
 
 import org.hibernate.annotations.Comment;
 import org.springframework.stereotype.Component;
 
 import com.projarctf.acmegames.domain.model.aluguel.Aluguel;
-import com.projarctf.acmegames.infraestructure.persistence.entity.AluguelEntity;
+import com.projarctf.acmegames.infrastructure.persistence.entity.AluguelEntity;
 
 import lombok.NoArgsConstructor;
 
