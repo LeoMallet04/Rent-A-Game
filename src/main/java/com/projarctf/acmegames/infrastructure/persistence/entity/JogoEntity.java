@@ -14,7 +14,6 @@ import java.util.List;
 @Entity
 @Table(name = "jogo")
 public class JogoEntity {
-
     @Id
     @Column(name = "codigo")
     private Integer codigo;

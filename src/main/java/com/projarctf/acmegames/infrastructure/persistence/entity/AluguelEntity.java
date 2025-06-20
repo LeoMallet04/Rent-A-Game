@@ -12,7 +12,6 @@ import java.sql.Date;
 @Entity
 @Table(name = "aluguel")
 public class AluguelEntity {
-
     @Id
     private Integer identificador;
     private Date dataInicial;
@@ -21,6 +20,7 @@ public class AluguelEntity {
     @ManyToOne
     @JoinColumn(name = "numero_cliente", nullable = false)
     private ClienteEntity cliente;
+
     @ManyToOne
     @JoinColumn(name = "codigo_jogo", nullable = false)
     private JogoEntity jogo;

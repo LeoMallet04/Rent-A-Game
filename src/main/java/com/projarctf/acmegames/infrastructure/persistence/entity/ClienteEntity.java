@@ -14,7 +14,6 @@ import java.util.List;
 @Entity
 @Table(name = "cliente")
 public class ClienteEntity {
-
     @Id
     @Column(name = "numero")
     private Long numero;
