@@ -15,15 +15,11 @@ public class JogoService {
     @Autowired
     JogoRepoJpaImpl jogoRepository;
 
-    @Autowired
-    JogoMapper jogoMapper;
-
     public List<Jogo> listJogos() {
         List<JogoEntity> jogoEntities = jogoRepository.getJogos();
 
         List<Jogo> jogos = jogoEntities.stream()
-            .map(jogoEntity -> jogoMapper.toDomain(jogoEntity)
-                )
+            .map(jogoEntity -> JogoMapper.toDomain(jogoEntity))
             .toList();
 
         return jogos;
