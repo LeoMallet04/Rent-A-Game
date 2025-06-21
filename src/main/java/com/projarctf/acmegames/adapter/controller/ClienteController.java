@@ -1,7 +1,8 @@
 package com.projarctf.acmegames.adapter.controller;
 
 import com.projarctf.acmegames.application.dto.ClienteDTO;
-import com.projarctf.acmegames.application.usecases.ListarClientesUseCase;
+import com.projarctf.acmegames.application.usecases.cliente.ListarClientesUseCase;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
