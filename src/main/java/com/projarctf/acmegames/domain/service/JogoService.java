@@ -20,4 +20,8 @@ public class JogoService {
     public boolean jogoExists(int codigo) {
         return jogoRepository.getJogoByCodigo(codigo) != null;
     }
+
+    public boolean cadastraJogo(Jogo jogo) {
+        return jogoRepository.cadastraJogo(jogo);
+    }
 }

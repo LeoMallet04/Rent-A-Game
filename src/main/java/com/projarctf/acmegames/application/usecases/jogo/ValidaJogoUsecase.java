@@ -1,4 +1,4 @@
-package com.projarctf.acmegames.application.usecases;
+package com.projarctf.acmegames.application.usecases.jogo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

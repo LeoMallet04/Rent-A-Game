@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.projarctf.acmegames.application.usecases.ListaJogoUsecase;
-import com.projarctf.acmegames.application.usecases.ValidaJogoUsecase;
+import com.projarctf.acmegames.application.dto.JogoDTO;
+import com.projarctf.acmegames.application.usecases.jogo.CadastraJogoUseCase;
+import com.projarctf.acmegames.application.usecases.jogo.ListaJogoUsecase;
+import com.projarctf.acmegames.application.usecases.jogo.ValidaJogoUsecase;
 
 @RestController
 @RequestMapping("/acmegames/cadastro")
@@ -19,7 +21,7 @@ public class JogoController {
     private ListaJogoUsecase listaJogoUsecase;
 
     @GetMapping("/listajogos")
-    public List<Object> listaJogos() {
+    public List<JogoDTO> listaJogos() {
         return listaJogoUsecase.listarJogos();
     }
 
@@ -28,8 +30,14 @@ public class JogoController {
 
     @GetMapping("/validajogo")
     public boolean validaJogo(@RequestBody final int codigo) {
-        System.out.println("Validando jogo com código: " + codigo);
-        
         return validaJogoUsecase.validaJogo(codigo);
+    }
+
+    @Autowired
+    private CadastraJogoUseCase cadastraJogoUseCase;
+
+    @GetMapping("/cadastrajogo")
+    public boolean cadastraJogo(@RequestBody final JogoDTO jogo) {
+        return cadastraJogoUseCase.cadastraJogo(jogo);
     }
 }

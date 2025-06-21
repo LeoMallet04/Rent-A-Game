@@ -33,5 +33,16 @@ public class JogoRepoJpaImpl implements IJogoRepository {
     @Override
     public Jogo getJogoByCodigo(int codigo) {
         return JogoMapper.toDomain(repository.findById(codigo));
-    }  
+    } 
+
+    @Override
+    public boolean cadastraJogo(Jogo jogo) {
+        if (getJogoByCodigo(jogo.getCodigo()) != null) {
+            return false; // Jogo já existe
+        }
+
+        JogoEntity jogoEntity = JogoMapper.toEntity(jogo);
+        repository.save(jogoEntity);
+        return true;
+    }
 }
