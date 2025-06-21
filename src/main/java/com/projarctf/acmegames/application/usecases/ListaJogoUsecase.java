@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.projarctf.acmegames.application.assembler.JogoAssembler;
-import com.projarctf.acmegames.application.dto.JogoEletronicoDTO;
 import com.projarctf.acmegames.domain.model.jogo.Jogo;
 import com.projarctf.acmegames.domain.model.jogo.JogoEletronico;
 import com.projarctf.acmegames.domain.model.jogo.JogoMesa;

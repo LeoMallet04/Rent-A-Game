@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import com.projarctf.acmegames.application.dto.ClienteDTO;
 import com.projarctf.acmegames.domain.model.cliente.Cliente;
 import com.projarctf.acmegames.domain.model.cliente.Individual;
-import com.projarctf.acmegames.infrastructure.persistence.entity.ClienteEntity;
 import com.projarctf.acmegames.domain.model.cliente.Empresarial;
 
 @Component

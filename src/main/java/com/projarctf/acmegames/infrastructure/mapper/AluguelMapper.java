@@ -1,6 +1,5 @@
 package com.projarctf.acmegames.infrastructure.mapper;
 
-import org.hibernate.annotations.Comment;
 import org.springframework.stereotype.Component;
 
 import com.projarctf.acmegames.domain.model.aluguel.Aluguel;
