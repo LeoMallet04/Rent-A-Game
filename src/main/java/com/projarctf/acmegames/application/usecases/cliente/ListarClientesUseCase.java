@@ -1,4 +1,4 @@
-package com.projarctf.acmegames.application.usecases;
+package com.projarctf.acmegames.application.usecases.cliente;
 
 import com.projarctf.acmegames.application.assembler.ClienteMapper;
 import com.projarctf.acmegames.application.dto.ClienteDTO;
