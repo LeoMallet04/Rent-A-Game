@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.projarctf.acmegames.domain.model.jogo.Jogo;
 import com.projarctf.acmegames.infrastructure.persistence.entity.JogoEntity;
+import com.projarctf.acmegames.infrastructure.persistence.repository.jogo.JogoRepoJpaImpl;
 import com.projarctf.acmegames.infrastructure.mapper.JogoMapper;
-import com.projarctf.acmegames.infrastructure.persistence.repository.JogoRepoJpaImpl;
 
 @Service
 public class JogoService {

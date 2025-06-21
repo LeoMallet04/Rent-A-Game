@@ -1,4 +1,4 @@
-package com.projarctf.acmegames.infrastructure.persistence.repository;
+package com.projarctf.acmegames.infrastructure.persistence.repository.jogo;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.projarctf.acmegames.domain.repository.IJogoJpaItfRep;
 import com.projarctf.acmegames.domain.repository.IJogoRepository;
 import com.projarctf.acmegames.infrastructure.persistence.entity.JogoEntity;
 

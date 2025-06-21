@@ -1,4 +1,4 @@
-package com.projarctf.acmegames.domain.repository;
+package com.projarctf.acmegames.infrastructure.persistence.repository.jogo;
 
 import java.util.List;
 
