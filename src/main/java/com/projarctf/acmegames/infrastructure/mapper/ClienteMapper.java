@@ -1,6 +1,4 @@
 package com.projarctf.acmegames.infrastructure.mapper;
-
-import com.projarctf.acmegames.infrastructure.persistence.entity.AluguelEntity;
 import org.springframework.stereotype.Component;
 
 import com.projarctf.acmegames.domain.model.cliente.Cliente;
@@ -11,7 +9,6 @@ import com.projarctf.acmegames.infrastructure.persistence.entity.ClienteEntity;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Component
 @NoArgsConstructor
