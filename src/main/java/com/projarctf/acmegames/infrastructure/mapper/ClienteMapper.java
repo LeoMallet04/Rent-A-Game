@@ -1,5 +1,6 @@
 package com.projarctf.acmegames.infrastructure.mapper;
 
+import com.projarctf.acmegames.infrastructure.persistence.entity.AluguelEntity;
 import org.springframework.stereotype.Component;
 
 import com.projarctf.acmegames.domain.model.cliente.Cliente;
@@ -8,6 +9,9 @@ import com.projarctf.acmegames.domain.model.cliente.Individual;
 import com.projarctf.acmegames.infrastructure.persistence.entity.ClienteEntity;
 
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 @NoArgsConstructor
@@ -27,5 +31,33 @@ public class ClienteMapper{
                     clienteEntity.getNomeFantasia(),
                     clienteEntity.getCnpj());
         }
+    }
+
+    public static ClienteEntity toEntity(Cliente cliente){
+        ClienteEntity clienteEntity = null;
+        if(cliente instanceof Individual){
+            clienteEntity = new ClienteEntity(
+                    (long) cliente.getNumero(),
+                    cliente.getNome(),
+                    cliente.getEndereco(),
+                    null,
+                    null,
+                    ((Individual) cliente).getCpf(),
+                    new ArrayList<>()
+            );
+        }
+        if(cliente instanceof Empresarial){
+            clienteEntity = new ClienteEntity(
+                    (long) cliente.getNumero(),
+                    cliente.getNome(),
+                    cliente.getEndereco(),
+                    ((Empresarial) cliente).getNomeFantasia(),
+                    ((Empresarial) cliente).getCnpj(),
+                    null,
+                    new ArrayList<>()
+            );
+        }
+
+        return clienteEntity;
     }
 }
