@@ -10,6 +10,10 @@ import com.projarctf.acmegames.infrastructure.persistence.entity.JogoEntity;
 
 public class JogoMapper {
     public static Jogo toDomain(JogoEntity jogoEntity) {
+        if (jogoEntity == null) {
+            return null; // ou lançar uma exceção, dependendo do caso de uso
+        }
+
         if (jogoEntity.getPlataforma() != null) { // eletronico
             return new JogoEletronico(
                 jogoEntity.getCodigo(), 

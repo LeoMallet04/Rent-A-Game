@@ -16,4 +16,8 @@ public class JogoService {
     public List<Jogo> listJogos() {
         return jogoRepository.getJogos();
     }
+
+    public boolean jogoExists(int codigo) {
+        return jogoRepository.getJogoByCodigo(codigo) != null;
+    }
 }
