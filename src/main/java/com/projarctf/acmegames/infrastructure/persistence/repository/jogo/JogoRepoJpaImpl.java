@@ -6,8 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.projarctf.acmegames.domain.model.jogo.Jogo;
 import com.projarctf.acmegames.domain.repository.IJogoRepository;
 import com.projarctf.acmegames.infrastructure.persistence.entity.JogoEntity;
+import com.projarctf.acmegames.infrastructure.mapper.JogoMapper;
 
 @Repository
 public class JogoRepoJpaImpl implements IJogoRepository {
@@ -15,16 +17,21 @@ public class JogoRepoJpaImpl implements IJogoRepository {
     private IJogoJpaItfRep repository;
 
     @Override
-    public List<JogoEntity> getJogos() {
-        List<JogoEntity> jogos = repository.findAll();
-        if (jogos.size() == 0)
-            return new LinkedList<JogoEntity>();
-        else
+    public List<Jogo> getJogos() {
+        List<JogoEntity> jogoEntities = repository.findAll();
+        if (jogoEntities.size() == 0) {
+            return new LinkedList<Jogo>();
+        } else {
+            List<Jogo> jogos = jogoEntities.stream()
+            .map(jogoEntity -> JogoMapper.toDomain(jogoEntity))
+            .toList();
+
             return jogos.stream().toList();
+        }
     }
 
     @Override
-    public JogoEntity getJogoByCodigo(int codigo) {
-        return repository.findById(codigo);
+    public Jogo getJogoByCodigo(int codigo) {
+        return JogoMapper.toDomain(repository.findById(codigo));
     }  
 }
