@@ -1,4 +1,4 @@
-package com.projarctf.acmegames.infrastructure.persistence.repository;
+package com.projarctf.acmegames.infrastructure.persistence.repository.cliente;
 
 import com.projarctf.acmegames.application.assembler.ClienteMapper;
 import com.projarctf.acmegames.domain.model.cliente.Cliente;
@@ -11,9 +11,9 @@ import java.util.stream.Collectors;
 @Repository
 public class ClienteRepositoryImpl implements IClienteRepository {
 
-    private final ClienteJpaRepository jpa;
+    private final IClienteJpaRepository jpa;
 
-    public ClienteRepositoryImpl(ClienteJpaRepository jpa) {
+    public ClienteRepositoryImpl(IClienteJpaRepository jpa) {
         this.jpa = jpa;
     }
 
