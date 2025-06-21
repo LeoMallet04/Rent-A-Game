@@ -44,4 +44,31 @@ public final class ClienteAssembler {
         }
     }
 
+    public static Cliente toDomain(ClienteDTO clienteDTO){
+        Cliente cliente = null;
+        if(clienteDTO.getCpf() != null){
+            cliente = new Individual(
+                clienteDTO.getNumero(),
+                clienteDTO.getNome(),
+                clienteDTO.getEndereco(),
+                clienteDTO.getCpf()
+            );
+        }else if(clienteDTO.getCnpj() != null){
+            cliente = new Empresarial(
+                clienteDTO.getNumero(),
+                clienteDTO.getNome(),
+                clienteDTO.getEndereco(),
+                clienteDTO.getNomeFantasia(),
+                clienteDTO.getCnpj()
+            );
+        }else{
+            cliente = new Cliente(
+                clienteDTO.getNumero(),
+                clienteDTO.getNome(),
+                clienteDTO.getEndereco()
+            );
+        }
+        return cliente;
+    }
+
 }
