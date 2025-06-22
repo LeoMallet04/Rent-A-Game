@@ -7,12 +7,18 @@ import com.projarctf.acmegames.infrastructure.persistence.entity.AluguelEntity;
 
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
+
 
 @NoArgsConstructor
 @Component
 public class AluguelMapper {
     
-    public static Aluguel toModel(AluguelEntity aluguelEntity){
+    public static Aluguel toDomain(AluguelEntity aluguelEntity){
+        if(aluguelEntity == null){
+            return null;
+        }
+
         return new Aluguel(
             aluguelEntity.getIdentificador(),
             aluguelEntity.getDataInicial(),
@@ -22,5 +28,18 @@ public class AluguelMapper {
             );
     }
 
+    public static AluguelEntity toEntity(Aluguel aluguel){
+        if(aluguel == null){
+            return null;
+        }
 
+        return new AluguelEntity(
+                aluguel.getIdentificador(),
+                new Date(aluguel.getDataInicial().getTime()),
+                aluguel.getPeriodo(),
+                ClienteMapper.toEntity(aluguel.getCliente()),
+                JogoMapper.toEntity(aluguel.getJogo())
+
+        );
+    }
 }
