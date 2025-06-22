@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +29,7 @@ public class JogoController {
     @Autowired
     private ValidaJogoUsecase validaJogoUsecase;
 
-    @GetMapping("/validajogo")
+    @PostMapping("/validajogo")
     public boolean validaJogo(@RequestBody final int codigo) {
         return validaJogoUsecase.validaJogo(codigo);
     }
@@ -36,7 +37,7 @@ public class JogoController {
     @Autowired
     private CadastraJogoUseCase cadastraJogoUseCase;
 
-    @GetMapping("/cadastrajogo")
+    @PostMapping("/cadastrajogo")
     public boolean cadastraJogo(@RequestBody final JogoDTO jogo) {
         return cadastraJogoUseCase.cadastraJogo(jogo);
     }
