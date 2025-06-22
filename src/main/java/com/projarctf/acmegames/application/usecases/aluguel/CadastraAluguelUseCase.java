@@ -2,7 +2,6 @@
 
  import com.projarctf.acmegames.application.assembler.AluguelAssembler;
  import com.projarctf.acmegames.application.dto.AluguelCreateDTO;
- import com.projarctf.acmegames.application.dto.AluguelDTO;
  import com.projarctf.acmegames.domain.model.cliente.Cliente;
  import com.projarctf.acmegames.domain.model.jogo.Jogo;
  import com.projarctf.acmegames.domain.service.AluguelService;

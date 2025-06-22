@@ -5,7 +5,6 @@ import com.projarctf.acmegames.domain.repository.IAluguelRepository;
 import com.projarctf.acmegames.infrastructure.mapper.AluguelMapper;
 
 import com.projarctf.acmegames.infrastructure.persistence.entity.AluguelEntity;
-import com.projarctf.acmegames.infrastructure.persistence.entity.JogoEntity;
 import com.projarctf.acmegames.infrastructure.persistence.repository.jogo.IJogoJpaItfRep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -27,7 +26,7 @@ public class AluguelJpaRepositoryImpl implements IAluguelRepository {
 
     @Override
     public List<Aluguel> getAlugueis() {
-        return aluguelRepository.findAll().stream().map(entity -> AluguelMapper.toDomain(entity)).collect(Collectors.toList());
+        return aluguelRepository.findAll().stream().map(AluguelMapper::toDomain).collect(Collectors.toList());
     }
 
     @Override

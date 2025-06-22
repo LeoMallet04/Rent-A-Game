@@ -1,14 +1,13 @@
  package com.projarctf.acmegames.domain.service;
 
- import com.projarctf.acmegames.application.dto.AluguelDTO;
+
  import com.projarctf.acmegames.domain.model.aluguel.Aluguel;
  import com.projarctf.acmegames.domain.repository.IAluguelRepository;
- import com.projarctf.acmegames.domain.repository.IJogoRepository;
- import com.projarctf.acmegames.infrastructure.persistence.repository.aluguel.AluguelJpaRepositoryImpl;
+
 
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Component;
- import org.springframework.stereotype.Service;
+
 
  import java.util.List;
 
@@ -27,10 +26,7 @@
      }
 
      public boolean validaAluguel(int identificador){
-        if(aluguelRepository.findAluguelById(identificador) != null){
-            return true;
-        }
-        return false;
+         return aluguelRepository.findAluguelById(identificador) != null;
      }
 
 //     public double getValorAluguelPorJogo(int codigo){

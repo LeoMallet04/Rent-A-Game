@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.projarctf.acmegames.application.assembler.AluguelAssembler;
 import com.projarctf.acmegames.application.dto.AluguelDTO;
-import com.projarctf.acmegames.domain.model.aluguel.Aluguel;
 import com.projarctf.acmegames.domain.service.AluguelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -17,6 +16,6 @@ public class ListaAlugueisUseCase {
     private AluguelService aluguelService;
 
     public List<AluguelDTO> listarAlugueis(){
-        return aluguelService.listAlugueis().stream().map(aluguel -> AluguelAssembler.toDTO(aluguel)).toList();
+        return aluguelService.listAlugueis().stream().map(AluguelAssembler::toDTO).toList();
     }
 }
