@@ -26,6 +26,10 @@ public class JogoService {
         return jogoRepository.getJogoByCodigo(codigo) != null;
     }
 
+    public Jogo getJogoPorCodigo(int codigo){
+        return jogoRepository.getJogoByCodigo(codigo);
+    }
+
     public boolean cadastraJogo(Jogo jogo) {
         return jogoRepository.cadastraJogo(jogo);
     }

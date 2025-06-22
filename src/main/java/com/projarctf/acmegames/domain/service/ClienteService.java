@@ -24,6 +24,11 @@ public class ClienteService {
     public boolean clienteExists(long numero) {
         return clienteRepository.getClienteByNumero(numero) != null;
     }
+
+    public Cliente getClientePorNumero(long numero){
+        return clienteRepository.getClienteByNumero(numero);
+    }
+
     public boolean cadastraCliente(Cliente cliente) {
         return clienteRepository.cadastraCliente(cliente);
     }
