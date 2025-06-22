@@ -1,0 +1,22 @@
+package com.projarctf.acmegames.application.usecases.aluguel;
+
+import java.util.List;
+
+
+import com.projarctf.acmegames.application.assembler.AluguelAssembler;
+import com.projarctf.acmegames.application.dto.AluguelDTO;
+import com.projarctf.acmegames.domain.model.aluguel.Aluguel;
+import com.projarctf.acmegames.domain.service.AluguelService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ListaAlugueisUseCase {
+
+    @Autowired
+    private AluguelService aluguelService;
+
+    public List<AluguelDTO> listarAlugueis(){
+        return aluguelService.listAlugueis().stream().map(aluguel -> AluguelAssembler.toDTO(aluguel)).toList();
+    }
+}
