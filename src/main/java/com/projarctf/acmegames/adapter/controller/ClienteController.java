@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projarctf.acmegames.application.dto.ClienteDTO;
@@ -30,7 +30,7 @@ public class ClienteController {
     private ValidaClienteUseCase validaClienteUseCase;
 
     @PostMapping("/validacliente")
-    public boolean validaCliente(@RequestParam final long numero) {
+    public boolean validaCliente(@RequestBody final long numero) {
         return validaClienteUseCase.validaCliente(numero);
     }
 }
