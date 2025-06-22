@@ -1,9 +1,11 @@
 package com.projarctf.acmegames.domain.repository;
 
-import com.projarctf.acmegames.domain.model.cliente.Cliente;
 import java.util.List;
+import com.projarctf.acmegames.domain.model.cliente.Cliente;
 
 public interface IClienteRepository {
-    List<Cliente> findAllClientes();
+    List<Cliente> getClientes();
+    Cliente getClienteByNumero(long numero);
+    boolean cadastraCliente(Cliente cliente);
 }
 

@@ -71,4 +71,7 @@ public final class ClienteAssembler {
         return cliente;
     }
 
+    public Object domainToDTO(Cliente cliente) {
+        throw new UnsupportedOperationException("Unimplemented method 'domainToDTO'");
+    }
 }

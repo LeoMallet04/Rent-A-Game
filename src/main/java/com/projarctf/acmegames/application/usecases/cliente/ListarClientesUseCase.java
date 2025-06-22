@@ -1,27 +1,32 @@
 package com.projarctf.acmegames.application.usecases.cliente;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import com.projarctf.acmegames.application.assembler.ClienteAssembler;
 import com.projarctf.acmegames.application.dto.ClienteDTO;
 import com.projarctf.acmegames.domain.model.cliente.Cliente;
-import com.projarctf.acmegames.domain.repository.IClienteRepository;
+import com.projarctf.acmegames.domain.service.ClienteService;
 
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-
-@Service
+@Component
 public class ListarClientesUseCase {
 
-    private final IClienteRepository repository;
+    @Autowired
+    private ClienteService clienteService;
 
-    public ListarClientesUseCase(IClienteRepository repository) {
-        this.repository = repository;
-    }
+    @Autowired
+    ClienteAssembler clienteAssembler;
 
-    public List<ClienteDTO> execute() {
-        List<Cliente> clientes = repository.findAllClientes();
-        return clientes.stream()
-                .map(ClienteAssembler::toDto)
+    public List<ClienteDTO> listarClientes() {
+        List<Cliente> clientes = clienteService.listClientes();
+
+        List<ClienteDTO> dtos = clientes.stream()
+                .map(cliente -> {
+                    return ClienteAssembler.toDto(cliente);
+                })
                 .toList();
+
+        return dtos;
     }
 }
