@@ -4,6 +4,9 @@ import com.projarctf.acmegames.domain.model.aluguel.Aluguel;
 import com.projarctf.acmegames.domain.repository.IAluguelRepository;
 import com.projarctf.acmegames.infrastructure.mapper.AluguelMapper;
 
+import com.projarctf.acmegames.infrastructure.persistence.entity.AluguelEntity;
+import com.projarctf.acmegames.infrastructure.persistence.entity.JogoEntity;
+import com.projarctf.acmegames.infrastructure.persistence.repository.jogo.IJogoJpaItfRep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,14 +16,43 @@ import java.util.stream.Collectors;
 @Repository
 public class AluguelJpaRepositoryImpl implements IAluguelRepository {
     @Autowired
-    private IAluguelJpaItfRep repository;
+    private IAluguelJpaItfRep aluguelRepository;
 
-    public AluguelJpaRepositoryImpl(IAluguelJpaItfRep repository) {
-        this.repository = repository;
+    @Autowired
+    private IJogoJpaItfRep jogoRepository;
+
+    public AluguelJpaRepositoryImpl(IAluguelJpaItfRep aluguelRepository) {
+        this.aluguelRepository = aluguelRepository;
     }
 
     @Override
     public List<Aluguel> getAlugueis() {
-        return repository.findAll().stream().map(entity -> AluguelMapper.toModel(entity)).collect(Collectors.toList());
+        return aluguelRepository.findAll().stream().map(entity -> AluguelMapper.toDomain(entity)).collect(Collectors.toList());
     }
+
+    @Override
+    public boolean cadastraAluguel(Aluguel aluguel){
+        if(aluguelRepository.findById(aluguel.getIdentificador()) != null){
+            return false;
+        }
+
+        AluguelEntity aluguelEntity = AluguelMapper.toEntity(aluguel);
+        aluguelRepository.save(aluguelEntity);
+        return true;
+    }
+
+    @Override
+    public Aluguel findAluguelById(int identificador){
+            return AluguelMapper.toDomain(aluguelRepository.findById(identificador));
+    }
+
+//    @Override
+//    public double getValorAluguelPorJogo(int codigoJogo){
+//        double valorAluguel = 0;
+//        if(jogoRepository.findById(codigoJogo) != null){
+//            valorAluguel = jogoRepository.findById(codigoJogo).getValorBase();
+//        }
+//        return valorAluguel;
+//    }
+
 }
