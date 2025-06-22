@@ -8,4 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface IAluguelJpaItfRep extends CrudRepository<AluguelEntity, Integer> {
     List<AluguelEntity> findAll();
+    AluguelEntity findById(int identificador);
 }
