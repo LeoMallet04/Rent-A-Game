@@ -10,7 +10,7 @@ import com.projarctf.acmegames.domain.model.jogo.JogoEletronico;
 import com.projarctf.acmegames.domain.model.jogo.JogoMesa;
 
 @Component
-public class JogoAssembler {
+public final class JogoAssembler {
     public Jogo dtoToDomain(JogoDTO dto) {
         if (dto.getPlataforma() != null) {
             return dtoToEletronico(dto);
