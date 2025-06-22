@@ -11,10 +11,10 @@ import com.projarctf.acmegames.domain.service.JogoService;
 @Component
 public class CadastraJogoUseCase {
     @Autowired
-    JogoService jogoService;
+    private JogoService jogoService;
 
     @Autowired
-    JogoAssembler jogoAssembler;
+    private JogoAssembler jogoAssembler;
 
     public boolean cadastraJogo(JogoDTO jogo) { 
         Jogo domainObject = jogoAssembler.dtoToDomain(jogo);        

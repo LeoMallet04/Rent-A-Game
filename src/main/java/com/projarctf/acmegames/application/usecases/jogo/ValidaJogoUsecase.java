@@ -8,7 +8,7 @@ import com.projarctf.acmegames.domain.service.JogoService;
 @Component
 public class ValidaJogoUsecase {
     @Autowired
-    JogoService jogoService;
+    private JogoService jogoService;
 
     public boolean validaJogo(int codigo) {   
         return jogoService.jogoExists(codigo);

@@ -13,10 +13,10 @@ import com.projarctf.acmegames.domain.service.JogoService;
 @Component
 public class ListaJogoUsecase {
     @Autowired
-    JogoService jogoService;
+    private JogoService jogoService;
 
     @Autowired
-    JogoAssembler jogoAssembler;
+    private JogoAssembler jogoAssembler;
 
     public List<JogoDTO> listarJogos() {        
         List<Jogo> jogos = jogoService.listJogos();
