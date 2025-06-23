@@ -5,7 +5,6 @@ import com.projarctf.acmegames.domain.repository.IAluguelRepository;
 import com.projarctf.acmegames.infrastructure.mapper.AluguelMapper;
 
 import com.projarctf.acmegames.infrastructure.persistence.entity.AluguelEntity;
-import com.projarctf.acmegames.infrastructure.persistence.repository.jogo.IJogoJpaItfRep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
