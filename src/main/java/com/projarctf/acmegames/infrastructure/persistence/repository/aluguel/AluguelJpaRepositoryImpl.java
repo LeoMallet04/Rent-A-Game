@@ -14,31 +14,31 @@ import java.util.stream.Collectors;
 @Repository
 public class AluguelJpaRepositoryImpl implements IAluguelRepository {
     @Autowired
-    private IAluguelJpaItfRep aluguelRepository;
+    private IAluguelJpaItfRep repository;
 
-    public AluguelJpaRepositoryImpl(IAluguelJpaItfRep aluguelRepository) {
-        this.aluguelRepository = aluguelRepository;
+    public AluguelJpaRepositoryImpl(IAluguelJpaItfRep repository) {
+        this.repository = repository;
     }
 
     @Override
     public List<Aluguel> getAlugueis() {
-        return aluguelRepository.findAll().stream().map(AluguelMapper::toDomain).collect(Collectors.toList());
+        return repository.findAll().stream().map(AluguelMapper::toDomain).collect(Collectors.toList());
     }
 
     @Override
     public boolean cadastraAluguel(Aluguel aluguel){
-        if(aluguelRepository.findById(aluguel.getIdentificador()) != null){
+        if(repository.findById(aluguel.getIdentificador()) != null){
             return false;
         }
 
         AluguelEntity aluguelEntity = AluguelMapper.toEntity(aluguel);
-        aluguelRepository.save(aluguelEntity);
+        repository.save(aluguelEntity);
         return true;
     }
 
     @Override
     public Aluguel findAluguelById(int identificador){
-            return AluguelMapper.toDomain(aluguelRepository.findById(identificador));
+            return AluguelMapper.toDomain(repository.findById(identificador));
     }
 
 
