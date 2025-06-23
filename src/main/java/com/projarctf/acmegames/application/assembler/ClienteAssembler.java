@@ -11,64 +11,70 @@ import com.projarctf.acmegames.domain.model.cliente.Empresarial;
 public final class ClienteAssembler {
 
     public static ClienteDTO toDto(Cliente cliente) {
+        if (cliente == null) {
+            throw new IllegalArgumentException("Cliente não pode ser nulo.");
+        }
+
         if (cliente instanceof Individual ind) {
             return new ClienteDTO(
-                    ind.getNumero(),
-                    ind.getNome(),
-                    ind.getEndereco(),
-                    "INDIVIDUAL",
-                    ind.getCpf(),
-                    null,
-                    null
+                ind.getNumero(),
+                ind.getNome(),
+                ind.getEndereco(),
+                "INDIVIDUAL",
+                ind.getCpf(),
+                null,
+                null
             );
         } else if (cliente instanceof Empresarial emp) {
             return new ClienteDTO(
-                    emp.getNumero(),
-                    emp.getNome(),
-                    emp.getEndereco(),
-                    "EMPRESARIAL",
-                    null,
-                    emp.getNomeFantasia(),
-                    emp.getCnpj()
+                emp.getNumero(),
+                emp.getNome(),
+                emp.getEndereco(),
+                "EMPRESARIAL",
+                null,
+                emp.getNomeFantasia(),
+                emp.getCnpj()
             );
         } else {
             return new ClienteDTO(
-                    cliente.getNumero(),
-                    cliente.getNome(),
-                    cliente.getEndereco(),
-                    "DESCONHECIDO",
-                    null,
-                    null,
-                    null
+                cliente.getNumero(),
+                cliente.getNome(),
+                cliente.getEndereco(),
+                "DESCONHECIDO",
+                null,
+                null,
+                null
             );
         }
     }
 
-    public static Cliente toDomain(ClienteDTO clienteDTO){
-        Cliente cliente = null;
-        if(clienteDTO.getCpf() != null){
-            cliente = new Individual(
+    public static Cliente toDomain(ClienteDTO clienteDTO) {
+        if (clienteDTO == null) {
+            throw new IllegalArgumentException("ClienteDTO não pode ser nulo.");
+        }
+
+        if (clienteDTO.getCpf() != null) {
+            return new Individual(
                 clienteDTO.getNumero(),
                 clienteDTO.getNome(),
                 clienteDTO.getEndereco(),
                 clienteDTO.getCpf()
             );
-        }else if(clienteDTO.getCnpj() != null){
-            cliente = new Empresarial(
+        } else if (clienteDTO.getCnpj() != null) {
+            return new Empresarial(
                 clienteDTO.getNumero(),
                 clienteDTO.getNome(),
                 clienteDTO.getEndereco(),
                 clienteDTO.getNomeFantasia(),
                 clienteDTO.getCnpj()
             );
-        }else{
-            cliente = new Cliente(
+        } else {
+            return new Cliente(
                 clienteDTO.getNumero(),
                 clienteDTO.getNome(),
                 clienteDTO.getEndereco()
             );
         }
-        return cliente;
     }
 
     public Object domainToDTO(Cliente cliente) {

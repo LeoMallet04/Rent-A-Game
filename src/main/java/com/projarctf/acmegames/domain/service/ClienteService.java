@@ -21,11 +21,11 @@ public class ClienteService {
     public List<Cliente> listClientes() {
         return clienteRepository.getClientes();
     }
-    public boolean clienteExists(long numero) {
+    public boolean clienteExists(int numero) {
         return clienteRepository.getClienteByNumero(numero) != null;
     }
 
-    public Cliente getClientePorNumero(long numero){
+    public Cliente getClientePorNumero(int numero){
         return clienteRepository.getClienteByNumero(numero);
     }
 
@@ -38,4 +38,5 @@ public class ClienteService {
                 .filter(aluguel -> aluguel.getCliente().getNumero() == codigo)
                 .toList();
     }
+
 }

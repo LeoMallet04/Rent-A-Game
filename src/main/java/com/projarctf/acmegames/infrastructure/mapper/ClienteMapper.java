@@ -14,15 +14,18 @@ import java.util.ArrayList;
 @NoArgsConstructor
 public class ClienteMapper{
     public static Cliente toDomain(ClienteEntity clienteEntity) {
+        if (clienteEntity == null) {
+            throw new IllegalArgumentException("ClienteEntity não pode ser nulo.");// Handle null case
+        }
         if (clienteEntity.getCpf() != null && !clienteEntity.getCpf().isBlank()) {
             return new Individual(
-                    clienteEntity.getNumero().intValue(),
+                    clienteEntity.getNumero(),
                     clienteEntity.getNome(),
                     clienteEntity.getEndereco(),
                     clienteEntity.getCpf());
         } else {
             return new Empresarial(
-                    clienteEntity.getNumero().intValue(),
+                    clienteEntity.getNumero(),
                     clienteEntity.getNome(),
                     clienteEntity.getEndereco(),
                     clienteEntity.getNomeFantasia(),
@@ -34,7 +37,7 @@ public class ClienteMapper{
         ClienteEntity clienteEntity = null;
         if(cliente instanceof Individual){
             clienteEntity = new ClienteEntity(
-                    (long) cliente.getNumero(),
+                    (int) cliente.getNumero(),
                     cliente.getNome(),
                     cliente.getEndereco(),
                     null,
@@ -45,7 +48,7 @@ public class ClienteMapper{
         }
         if(cliente instanceof Empresarial){
             clienteEntity = new ClienteEntity(
-                    (long) cliente.getNumero(),
+                    (int) cliente.getNumero(),
                     cliente.getNome(),
                     cliente.getEndereco(),
                     ((Empresarial) cliente).getNomeFantasia(),

@@ -9,7 +9,7 @@ public class ValidaClienteUseCase {
     @Autowired
     ClienteService clienteService;
 
-    public boolean validaCliente(long numero) {
+    public boolean validaCliente(int numero) {
         return clienteService.clienteExists(numero);
     }
 }

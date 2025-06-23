@@ -9,6 +9,8 @@ import java.util.List;
 
 @Repository
 public interface IClienteJpaItfRep extends CrudRepository<ClienteEntity, Long> {
-    public List<ClienteEntity> findAll();
-    public ClienteEntity findByNumero(Long numero);
+    List<ClienteEntity> findAll();
+    ClienteEntity findByNumero(Long numero);
+    boolean existsByCpf(String cpf);
+    boolean existsByCnpj(String cnpj);
 }

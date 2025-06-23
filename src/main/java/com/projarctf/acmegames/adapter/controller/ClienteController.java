@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.projarctf.acmegames.application.dto.ClienteDTO;
 import com.projarctf.acmegames.application.usecases.cliente.ListarClientesUseCase;
 import com.projarctf.acmegames.application.usecases.cliente.ValidaClienteUseCase;
+import com.projarctf.acmegames.application.usecases.cliente.CadastraClienteUseCase;
 
 @RestController
 @RequestMapping("/acmegames/cadastro")
@@ -19,7 +20,6 @@ public class ClienteController {
 
     @Autowired
     private ListarClientesUseCase listaClientesUseCase;
-
 
     @GetMapping("/listaclientes")
     public List<ClienteDTO> listaClientes() {
@@ -30,7 +30,15 @@ public class ClienteController {
     private ValidaClienteUseCase validaClienteUseCase;
 
     @PostMapping("/validacliente")
-    public boolean validaCliente(@RequestBody final long numero) {
+    public boolean validaCliente(@RequestBody final int numero) {
         return validaClienteUseCase.validaCliente(numero);
+    }
+
+    @Autowired
+    private CadastraClienteUseCase CadastraClienteUseCase;
+
+    @PostMapping("/cadastracliente")
+    public boolean cadastraCliente(@RequestBody final ClienteDTO cliente) {
+        return CadastraClienteUseCase.cadastraCliente(cliente);
     }
 }
