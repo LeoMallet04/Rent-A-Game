@@ -31,10 +31,4 @@ public final class AluguelAssembler {
       );
   }
 
-  // public static Aluguel toDomain(AluguelDTO aluguelDTO){
-  //   return new Aluguel(
-  //     aluguelDTO.getIdentificador(),
-  //     aluguelDTO.
-  //   )
-  // }
 }
