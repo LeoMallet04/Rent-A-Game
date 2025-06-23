@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.projarctf.acmegames.application.assembler.AluguelAssembler;
-import com.projarctf.acmegames.application.dto.AluguelDTO;
 import com.projarctf.acmegames.domain.model.aluguel.Aluguel;
 import com.projarctf.acmegames.domain.service.ClienteService;
 
@@ -21,7 +20,7 @@ public class ListaAlugueisDoClienteUseCase {
         List<Aluguel> alugueis = clienteService.getAlugueisForCliente(codigoCliente);
         
         return alugueis.stream()
-                .map(aluguel -> AluguelAssembler.toAluguelClienteDTO(aluguel))
+                .map(AluguelAssembler::toAluguelClienteDTO)
                 .toList();
     }
     

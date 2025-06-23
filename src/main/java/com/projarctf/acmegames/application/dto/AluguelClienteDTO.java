@@ -1,7 +1,5 @@
 package com.projarctf.acmegames.application.dto;
 
-import com.projarctf.acmegames.domain.model.cliente.Cliente;
-import com.projarctf.acmegames.domain.model.jogo.Jogo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
