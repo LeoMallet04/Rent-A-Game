@@ -29,8 +29,13 @@
          return aluguelRepository.findAluguelById(identificador) != null;
      }
 
-//     public double getValorAluguelPorJogo(int codigo){
-//         return aluguelRepository.getValorAluguelPorJogo(codigo);
-//     }
+     public double getValorFinalAluguel(int identificador){
+         double valorFinal = 0;
+         Aluguel aluguel = aluguelRepository.findAluguelById(identificador);
+         if(aluguel != null){
+             valorFinal = aluguel.calcularValorAluguel();
+         }
+         return valorFinal;
+     }
  }
  
