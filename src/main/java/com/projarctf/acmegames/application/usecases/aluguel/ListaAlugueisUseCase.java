@@ -8,7 +8,6 @@ import com.projarctf.acmegames.application.dto.AluguelDTO;
 import com.projarctf.acmegames.domain.service.AluguelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 @Component
 public class ListaAlugueisUseCase {
