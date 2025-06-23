@@ -10,6 +10,4 @@ public interface IAluguelRepository {
     boolean cadastraAluguel(Aluguel aluguel);
 
     Aluguel findAluguelById(int identificador);
-
-//    double getValorAluguelPorJogo(int codigoJogo);
 }
