@@ -8,9 +8,10 @@
  import com.projarctf.acmegames.domain.service.ClienteService;
  import com.projarctf.acmegames.domain.service.JogoService;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Component;
  import org.springframework.stereotype.Service;
 
- @Service
+ @Component
  public class CadastraAluguelUseCase {
 
      @Autowired

@@ -4,13 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.projarctf.acmegames.domain.model.aluguel.Aluguel;
 import com.projarctf.acmegames.domain.model.jogo.Jogo;
 import com.projarctf.acmegames.domain.repository.IAluguelRepository;
 import com.projarctf.acmegames.domain.repository.IJogoRepository;
 
-@Component
+@Service
 public class JogoService {
     @Autowired
     IJogoRepository jogoRepository;

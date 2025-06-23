@@ -2,9 +2,10 @@ package com.projarctf.acmegames.application.usecases.aluguel;
 
 import com.projarctf.acmegames.domain.service.AluguelService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+@Component
 public class ValidaAluguelUseCase {
 
     @Autowired

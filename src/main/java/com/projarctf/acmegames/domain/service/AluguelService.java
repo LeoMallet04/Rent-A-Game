@@ -7,12 +7,13 @@
 
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Component;
+ import org.springframework.stereotype.Service;
 
 
  import java.util.List;
 
- @Component
- public class AluguelService {
+@Service
+public class AluguelService {
 
      @Autowired
      private IAluguelRepository aluguelRepository;
@@ -37,5 +38,4 @@
          }
          return valorFinal;
      }
- }
- 
+}
