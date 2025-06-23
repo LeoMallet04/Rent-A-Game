@@ -2,6 +2,7 @@ package com.projarctf.acmegames.application.usecases.jogo;
 
 import java.util.List;
 
+import com.projarctf.acmegames.application.dto.AluguelClienteDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,11 +17,11 @@ public class ListaAlugueisDoClienteUseCase {
     @Autowired
     private ClienteService clienteService;
 
-    public List<AluguelDTO> listarAlugueisDoCliente(int codigoCliente) {
+    public List<AluguelClienteDTO> listarAlugueisDoCliente(int codigoCliente) {
         List<Aluguel> alugueis = clienteService.getAlugueisForCliente(codigoCliente);
         
         return alugueis.stream()
-                .map(aluguel -> AluguelAssembler.toDTO(aluguel))
+                .map(aluguel -> AluguelAssembler.toAluguelClienteDTO(aluguel))
                 .toList();
     }
     
