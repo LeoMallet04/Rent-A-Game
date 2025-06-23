@@ -1,5 +1,6 @@
 package com.projarctf.acmegames.application.assembler;
 
+import com.projarctf.acmegames.application.dto.AluguelClienteDTO;
 import com.projarctf.acmegames.application.dto.AluguelCreateDTO;
 import com.projarctf.acmegames.application.dto.AluguelDTO;
 import com.projarctf.acmegames.domain.model.aluguel.Aluguel;
@@ -28,6 +29,16 @@ public final class AluguelAssembler {
               aluguelCreateDTO.getPeriodo(),
               cliente,
               jogo
+      );
+  }
+
+  public static AluguelClienteDTO toAluguelClienteDTO(Aluguel aluguel){
+      return new AluguelClienteDTO(
+              aluguel.getCliente().getNumero(),
+              aluguel.getIdentificador(),
+              aluguel.getDataInicial(),
+              aluguel.getPeriodo(),
+              aluguel.getJogo().getCodigo()
       );
   }
 
