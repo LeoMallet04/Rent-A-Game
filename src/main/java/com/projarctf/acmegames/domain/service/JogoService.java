@@ -3,6 +3,7 @@ package com.projarctf.acmegames.domain.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.projarctf.acmegames.domain.model.aluguel.Aluguel;
@@ -10,7 +11,7 @@ import com.projarctf.acmegames.domain.model.jogo.Jogo;
 import com.projarctf.acmegames.domain.repository.IAluguelRepository;
 import com.projarctf.acmegames.domain.repository.IJogoRepository;
 
-@Service
+@Component
 public class JogoService {
     @Autowired
     IJogoRepository jogoRepository;
@@ -38,5 +39,17 @@ public class JogoService {
         return aluguelRepository.getAlugueis().stream()
                 .filter(aluguel -> aluguel.getJogo().getCodigo() == codigo)
                 .toList();
+    }
+
+    public double getValorAluguelJogo(int codigo){
+        double valorJogo = 0;
+        Jogo jogo = jogoRepository.getJogoByCodigo(codigo);
+        if(jogo == null){
+            return valorJogo;
+        }
+
+        valorJogo = jogo.getValorBase();
+
+        return valorJogo;
     }
 }
