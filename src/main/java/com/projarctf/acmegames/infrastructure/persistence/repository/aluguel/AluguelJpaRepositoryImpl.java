@@ -17,9 +17,6 @@ public class AluguelJpaRepositoryImpl implements IAluguelRepository {
     @Autowired
     private IAluguelJpaItfRep aluguelRepository;
 
-    @Autowired
-    private IJogoJpaItfRep jogoRepository;
-
     public AluguelJpaRepositoryImpl(IAluguelJpaItfRep aluguelRepository) {
         this.aluguelRepository = aluguelRepository;
     }
@@ -45,13 +42,5 @@ public class AluguelJpaRepositoryImpl implements IAluguelRepository {
             return AluguelMapper.toDomain(aluguelRepository.findById(identificador));
     }
 
-//    @Override
-//    public double getValorAluguelPorJogo(int codigoJogo){
-//        double valorAluguel = 0;
-//        if(jogoRepository.findById(codigoJogo) != null){
-//            valorAluguel = jogoRepository.findById(codigoJogo).getValorBase();
-//        }
-//        return valorAluguel;
-//    }
 
 }
