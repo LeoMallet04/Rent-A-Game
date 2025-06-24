@@ -13,9 +13,6 @@ public class CadastraClienteUseCase {
     @Autowired
     private ClienteService clienteService;
 
-    @Autowired
-    private ClienteAssembler clienteAssembler;
-
     public boolean cadastraCliente(ClienteDTO clienteDTO) {
         Cliente domainObject = ClienteAssembler.toDomain(clienteDTO);
         
