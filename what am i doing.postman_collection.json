@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "cdd1e7ab-c4db-4caa-beae-541fab1d9ede",
+		"name": "what am i doing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43963721",
+		"_collection_link": "https://t1-projarc.postman.co/workspace/14d86008-a34f-40c1-8ca2-ad1bffce2eb8/collection/43963721-cdd1e7ab-c4db-4caa-beae-541fab1d9ede?action=share&source=collection_link&creator=43963721"
+	},
+	"item": [
+		{
+			"name": "lista clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/acmegames/cadastro/listaclientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"acmegames",
+						"cadastro",
+						"listaclientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lista jogos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/acmegames/cadastro/listajogos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"acmegames",
+						"cadastro",
+						"listajogos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lista allugueis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/acmegames/cadastro/listaalugueis",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"acmegames",
+						"cadastro",
+						"listaalugueis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "valida jogo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "11",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/acmegames/cadastro/validajogo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"acmegames",
+						"cadastro",
+						"validajogo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "valida cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "1",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/acmegames/cadastro/validacliente",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"acmegames",
+						"cadastro",
+						"validacliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "valida aluguel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "1",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/acmegames/validaaluguel",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"acmegames",
+						"validaaluguel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get alugueis for jogo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/acmegames/jogo/aluguel/:10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"acmegames",
+						"jogo",
+						"aluguel",
+						":10"
+					],
+					"variable": [
+						{
+							"key": "10",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get alugueis for cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/acmegames/cliente/aluguel/:1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"acmegames",
+						"cliente",
+						"aluguel",
+						":1"
+					],
+					"variable": [
+						{
+							"key": "1",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastra jogo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo\" : 1,\r\n    \"nome\" : \"oi\",\r\n    \"valorBase\" : 1,\r\n    \"valorAluguel\" : 1,\r\n    \"tipo\" : \"TABULEIRO\",\r\n    \"plataforma\" : null,\r\n    \"numeroPecas\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/acmegames/cadastro/cadastrajogo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"acmegames",
+						"cadastro",
+						"cadastrajogo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
