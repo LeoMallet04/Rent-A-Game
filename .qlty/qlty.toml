@@ -1,0 +1,12 @@
+config_version = "0"
+
+[checks]
+mode = "comment"
+
+[[plugin]]
+name = "eslint"
+mode = "comment"
+
+[[plugin]]
+name = "prettier"
+mode = "monitor

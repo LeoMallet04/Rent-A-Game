@@ -1,0 +1,28 @@
+# .github/workflows/ci.yml
+name: Test and Coverage
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  id-token: write # Required for OIDC
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      # Run your tests with coverage
+      - name: Run tests
+        run: npm test -- --coverage
+      
+      # Upload coverage to Qlty
+      - uses: qltysh/qlty-action/coverage@v2
+        with:
+          oidc: true
+          files: coverage/lcov.info
