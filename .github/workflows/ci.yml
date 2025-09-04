@@ -1,5 +1,5 @@
-# .github/workflows/ci.yml
-name: CI (Qlty)
+# .github/workflows/ci-java.yml
+name: CI (Qlty + Java)
 
 on:
   workflow_dispatch:
@@ -33,17 +33,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      # Instalar JDK
+      - uses: actions/setup-java@v3
         with:
-          node-version: 20
+          distribution: temurin
+          java-version: 17
 
-      - run: npm ci
-
-      # Rodar testes com Jest (gera coverage/lcov.info)
-      - run: npm test -- --coverage --coverageReporters=lcov
+      # Rodar testes e gerar relatório JaCoCo
+      - name: Rodar testes com Maven e gerar cobertura
+        run: mvn clean test jacoco:report
 
       # Enviar cobertura para o Qlty
       - uses: qltysh/qlty-action/coverage@v2
         with:
           oidc: true
-          files: coverage/lcov.info
+          files: target/site/jacoco/jacoco.xml
