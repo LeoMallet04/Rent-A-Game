@@ -19,12 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      # Instalar Qlty CLI
       - name: Instalar Qlty CLI
         run: curl -s https://qlty.sh/install.sh | bash
 
-      # Rodar análise de qualidade com base no qlty.toml
       - name: Rodar análise Qlty
         run: qlty check
 
